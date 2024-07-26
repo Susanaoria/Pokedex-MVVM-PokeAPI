@@ -32,12 +32,10 @@ class PokeListAdapter(private val pokemonClick: (Int) -> Unit) : RecyclerView.Ad
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         val binding = holder.binding
         val pokemon = pokemonList[position]
+        val pokemonId = pokemon.url.split("/").filter { it.isNotEmpty() }.last().toInt() // Extraer ID de la URL
+        binding.pokemonText.text = "#${pokemonId} - ${pokemon.name}"
 
-        // Configura el texto del elemento de la lista con el nombre y número del Pokémon
-        binding.pokemonText.text = "#${position + 1} - ${pokemon.name}"
-
-        // Establece el click listener para el elemento de la lista
-        holder.itemView.setOnClickListener { pokemonClick(position + 1) }
+        holder.itemView.setOnClickListener { pokemonClick(pokemonId) }
     }
 
     // ViewHolder para la lista de Pokémon
