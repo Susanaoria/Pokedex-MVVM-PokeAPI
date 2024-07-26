@@ -10,3 +10,7 @@ data class PokeApiResponse (
     @Expose @SerializedName("previous") val previous: String, // URL para la página anterior de resultados
     @Expose @SerializedName("results") val results: List<PokeResult> // Lista de resultados de Pokémon
 )
+
+
+
+

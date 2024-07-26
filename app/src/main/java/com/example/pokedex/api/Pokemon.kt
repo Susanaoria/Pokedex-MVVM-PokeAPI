@@ -156,14 +156,18 @@ data class StatInfo(
     @Expose @SerializedName("url") val url: String // URL de la estadística
 )
 
-// Clase de datos que representa un tipo de Pokémon
 data class Type(
-    @Expose @SerializedName("slot") val slot: Int, // Ranura del tipo
-    @Expose @SerializedName("type") val type: TypeInfo // Información del tipo
+    @Expose @SerializedName("slot") val slot: Int,
+    @Expose @SerializedName("type") val type: TypeInfo
 )
 
-// Clase de datos que representa la información de un tipo de Pokémon
 data class TypeInfo(
-    @Expose @SerializedName("name") val name: String, // Nombre del tipo
-    @Expose @SerializedName("url") val url: String // URL del tipo
+    @SerializedName("name") @Expose val name: String,
+    @SerializedName("url") @Expose val url: String
 )
+
+
+
+
+
+
